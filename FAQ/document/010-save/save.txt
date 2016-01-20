@@ -1,0 +1,5 @@
+save.js 在dark 名字空間下 定義了 用於 存儲遊戲記錄使用的 e_save類
+
+achievement.js 為 e_save 定義了 _achievement 處理 解鎖成就
+record.js 為 e_save 定義了 _record 處理 遊戲進度
+

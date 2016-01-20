@@ -1,0 +1,48 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d"],
+
+    "jsList" : [
+        "src/resource.js",
+        
+        
+        
+        "src/dark/core.js",
+        
+        "src/dark/singleton/json.js",
+        "src/dark/singleton/i18n.js",
+        
+        "src/singleton/i18n/zh_tw.js",
+        
+        
+        
+        "src/save/save.js",
+        "src/save/achievement.js",
+        "src/save/record.js",
+        
+        
+        
+        "src/scene/other/AchievementScene.js",
+        
+        "src/scene/MapScene.js",
+        "src/scene/RoleScene.js",
+        "src/scene/EquipScene.js",
+        "src/scene/StoreScene.js",
+        "src/scene/WarScene.js",
+        "src/scene/DramaScene.js",
+        "src/scene/LoadScene.js",
+        "src/scene/NewScene.js",
+        "src/scene/MainScene.js",
+        
+        
+        "src/app.js"
+    ]
+}

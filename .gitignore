@@ -1,3 +1,9 @@
+# cocos2d-js
+/.settings
+/frameworks
+/runtime
+
+
 # Compiled Object files
 *.slo
 *.lo
