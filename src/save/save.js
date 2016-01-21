@@ -12,4 +12,9 @@ dark.e_save.init_once = function(){
 	obj._init();
 	
 	dark.e_save._init = true;
-}
+};
+
+//返回 成就 實例
+dark.e_save.get_achievement = function(){
+	return this._achievement;
+};
