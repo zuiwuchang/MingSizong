@@ -79,9 +79,11 @@ var HelloWorldScene = cc.Scene.extend({
         
         //初始化 記錄
         dark.e_save.init_once();
+        //加載 成就
+        dark.e_save.get_achievement().load();
         
-        //var scene = new MainScene();
-        var scene = new AchievementScene();
+        var scene = new MainScene();
+        //var scene = new AchievementScene();
         cc.director.runScene(scene);
     }
 });

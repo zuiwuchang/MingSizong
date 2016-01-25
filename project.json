@@ -17,6 +17,7 @@
         
         "src/dark/core.js",
         
+        "src/dark/singleton/shader.js",
         "src/dark/singleton/json.js",
         "src/dark/singleton/i18n.js",
         

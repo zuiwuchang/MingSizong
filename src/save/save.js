@@ -8,8 +8,7 @@ dark.e_save.init_once = function(){
 		return;
 	}
 	
-	var obj = this._achievement;
-	obj._init();
+	this._init_achievement();
 	
 	dark.e_save._init = true;
 };

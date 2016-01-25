@@ -1,0 +1,8 @@
+保存成就數據
+save()
+
+加載成就數據
+load()
+
+返回id為指定字符串的 成就定義 不存在返回 undefined
+item(id)
