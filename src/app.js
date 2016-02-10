@@ -82,8 +82,20 @@ var HelloWorldScene = cc.Scene.extend({
         //加載 成就
         dark.e_save.get_achievement().load();
         
-        var scene = new MainScene();
+        //var scene = new MainScene();
         //var scene = new AchievementScene();
+        
+        var record = dark.e_save.get_record();
+        //設置 記錄名
+        record.name("dark");
+        //設置 難度
+        record.difficulty(0);
+        //設置關卡 劇本
+        record.set_drama(DARK_DRAMA_NAME_START);
+
+        //執行 劇本
+        var scene = new DramaScene();
+        
         cc.director.runScene(scene);
     }
 });

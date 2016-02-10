@@ -9,6 +9,7 @@ dark.e_save.init_once = function(){
 	}
 	
 	this._init_achievement();
+	this._init_record();
 	
 	dark.e_save._init = true;
 };
@@ -16,4 +17,8 @@ dark.e_save.init_once = function(){
 //返回 成就 實例
 dark.e_save.get_achievement = function(){
 	return this._achievement;
+};
+
+dark.e_save.get_record = function(){
+	return this._record;
 };

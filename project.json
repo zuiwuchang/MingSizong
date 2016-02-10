@@ -25,9 +25,19 @@
         
         
         
+        "src/singleton/define.js",
+        
+        "src/ui/UiTalkSprite.js",
+        
+        
+        
         "src/save/save.js",
         "src/save/achievement.js",
         "src/save/record.js",
+        
+        
+        
+        "src/drama/drama.js",
         
         
         

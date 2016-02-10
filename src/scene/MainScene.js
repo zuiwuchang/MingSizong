@@ -76,8 +76,8 @@ var MainLayer = cc.Layer.extend({
 
 	//事件響應
 	_e_button_new_click:function(){
-		cc.log(_("MainScene_New"));
-		
+		var scene = new NewScene();
+		cc.director.pushScene(scene);
 	},
 	_e_button_continue_click:function(){
 		cc.log(_("MainScene_Contiue"));

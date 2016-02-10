@@ -1,11 +1,11 @@
-/*		劇本		*/
-var DramaLayer = cc.Layer.extend({
+/*		戰前準備		*/
+var WarLayer = cc.Layer.extend({
 	ctor:function () {
 		this._super();
-		
+
 		var size = cc.winSize;
-		
-		var node = new cc.LabelTTF("劇本", "Arial", 38);
+
+		var node = new cc.LabelTTF("戰前準備", "Arial", 38);
 		node.attr({
 			x:size.width/2,
 			y:size.height/2,
@@ -13,15 +13,15 @@ var DramaLayer = cc.Layer.extend({
 			anchory:0.5
 		});
 		this.addChild(node);
-		
+
 	}
 });
 
-var DramaScene = cc.Scene.extend({
+var WarScene = cc.Scene.extend({
 	onEnter:function () {
 		this._super();
 
-		var layer = new DramaLayer();
+		var layer = new WarLayer();
 		this.addChild(layer);
 	}
 });
