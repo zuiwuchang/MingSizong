@@ -178,7 +178,7 @@ var DramaRoleLayer = cc.Layer.extend({
 		//定義動畫
 		var animation = new cc.Animation();
 		//為動畫 增加 幀
-		animation.addSpriteFrameWithTexture(sprite.texture, cc.rect(0, this._h * 7, this._w, this._h));
+		//animation.addSpriteFrameWithTexture(sprite.texture, cc.rect(0, this._h * 7, this._w, this._h));
 		animation.addSpriteFrameWithTexture(sprite.texture, cc.rect(0, this._h * 8, this._w, this._h));
 
 		animation.setDelayPerUnit(DARK_DRAMA_ANIMATION_REPORT_INTERVAL);
@@ -220,7 +220,7 @@ var DramaRoleLayer = cc.Layer.extend({
 				"x":x,
 				"y":y
 			});
-			
+
 			this._right_min.setVisible(true);
 			this._left_min.setVisible(false);
 		}else if(obj.mpos == 2){
@@ -308,7 +308,11 @@ var DramaRoleLayer = cc.Layer.extend({
 		
 		if(node != undefined){
 			var name = info.info.name;
-			node.set_string(name,face,obj.str);
+			var str = obj.str;
+			name = dark.drama_fun.repleace(name);
+			str = dark.drama_fun.repleace(str);
+			
+			node.set_string(name,face,str);
 		}
 	},
 
@@ -445,6 +449,9 @@ var DramaLayer = cc.Layer.extend({
 		case DARK_DRAMA_TYPE_ROLE_TALK:
 			next = this._drama_role_talk(info);
 			break;
+		case DARK_DRAMA_TYPE_WAR:
+			next = this._drama_war(info);
+			break;
 		}
 		
 		if(next){
@@ -504,6 +511,10 @@ var DramaLayer = cc.Layer.extend({
 		this._role.role_talk(obj);
 
 		return false;
+	},
+	_drama_war:function(info){
+		var scene  = new WarScene(info)
+		cc.director.runScene(scene);
 	},
 	
 	wait:function(ok){
