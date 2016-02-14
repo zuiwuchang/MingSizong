@@ -62,7 +62,7 @@ var DramaRoleLayer = cc.Layer.extend({
 	_right_min:null,
 	_left:null,
 	_right:null,
-	ctor:function (w,h) {
+	ctor:function () {
 		this._super();
 
 		this._keys = {};
@@ -85,7 +85,7 @@ var DramaRoleLayer = cc.Layer.extend({
 		node.setVisible(false);
 		this._right_min = node;
 		
-		var node = new cc.Sprite("res/public/11.png");
+		node = new cc.Sprite("res/public/11.png");
 		this.addChild(node);
 		node.attr({
 			"anchorX":0,
@@ -513,7 +513,7 @@ var DramaLayer = cc.Layer.extend({
 		return false;
 	},
 	_drama_war:function(info){
-		var scene  = new WarScene(info)
+		var scene  = new WarScene(info.value);
 		cc.director.runScene(scene);
 	},
 	
