@@ -1,6 +1,36 @@
 /*		遊戲記錄 數據 進度 	*/
+//遊戲記錄
 dark.e_save._init_record = function(){
 	var record = {};
+	
+	//結構定義 角色記錄
+	record.create_role = function(id,sid,lv){
+		var instance = {};
+		if(lv == undefined){
+			lv = 1;
+		}
+		
+		//唯一標識符
+		instance.id = id;
+		
+		//資源id
+		instance.sid = sid;
+		
+		//角色等級
+		instance.lv = lv;
+		//當前 經驗
+		instance.exp = 0;
+		
+		return instance;
+	};
+	record._roles = [
+	                 record.create_role(ROLE_ID_MAIN,5 * 21 + 3),
+	                 record.create_role(ROLE_ID_YAN13,5 * 21 + 6),
+	                 record.create_role(ROLE_ID_CAOBIN,1 * 21 + 6),
+	];
+	record.roles = function(){
+		return this._roles;
+	};
 	
 	//記錄名
 	record._name = {};
@@ -36,6 +66,10 @@ dark.e_save._init_record = function(){
 	//record._info
 	//設置  執行劇本
 	record.set_drama = function(name){
+		if(name == undefined){
+			name = record._info.name;
+		}
+		
 		var obj = {};
 		obj.name = name;
 		
@@ -44,6 +78,10 @@ dark.e_save._init_record = function(){
 	};
 	//設置 戰前準備
 	record.set_war = function(name){
+		if(name == undefined){
+			name = record._info.name;
+		}
+		
 		var obj = {};
 		obj.name = name;
 
@@ -52,6 +90,10 @@ dark.e_save._init_record = function(){
 	};
 	//設置 地圖
 	record.set_map = function(name){
+		if(name == undefined){
+			name = record._info.name;
+		}
+		
 		var obj = {};
 		obj.name = name;
 

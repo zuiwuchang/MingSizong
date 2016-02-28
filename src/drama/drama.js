@@ -36,7 +36,7 @@ var DARK_DRAMA_NAME_MASTER = "聖主即位";
 var DARK_DRAMA_NAME_START = DARK_DRAMA_NAME_MASTER;
 //劇本定義
 dark.drama[DARK_DRAMA_NAME_MASTER] = [
-/*                                      
+                                      
 	{type:DARK_DRAMA_TYPE_NEW_SCENE,value:"res/drama/115.png"},
 	{type:DARK_DRAMA_TYPE_ASIDE,value:"天啟七年八月二十二日，熹宗駕崩。\n聖主思宗即位，年號崇禎。"},
 	{type:DARK_DRAMA_TYPE_ASIDE,value:"天啟七年十月，聖主即位二月餘。\n閹黨魏忠賢請辭。\n十一月聖主下令，魏忠賢到鳳陽看墳。"},
@@ -191,12 +191,18 @@ dark.drama[DARK_DRAMA_NAME_MASTER] = [
 	{type:DARK_DRAMA_TYPE_NEW_SCENE,value:"res/drama/115.png"},
 	{type:DARK_DRAMA_TYPE_ASIDE,value:"於是本使立刻帶輕騎,日夜追趕魏閹\n終於，在直隸河間府阜城縣，追上了魏閹"},
 	{type:DARK_DRAMA_TYPE_ASIDE,value:"然而魏閹帶有1千多人的隨從，其中包括了私人衛隊\n鄙人日夜追趕只有身邊的200輕騎\n任務雖然艱難，但魏閹非死不可，為了大明，為了聖主"},
-	*/
+	
 	{
 		type:DARK_DRAMA_TYPE_WAR,
 		value:{
 			//舞台定義
 			"background":"res/drama/62.png",
+			
+			//出陣人數
+			"outmin":2,
+			"outmax":3,
+			//必須出陣 角色
+			"outmust":[ROLE_ID_MAIN],
 			
 			//出場角色
 			"roles":[

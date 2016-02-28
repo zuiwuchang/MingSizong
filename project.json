@@ -37,7 +37,16 @@
         
         
         
+        "src/role/base.js",
+        "src/role/hero.js",
+        "src/role/cavalry.js",
+        "src/role/horse_archer.js",
+        "src/role/factory.js",
+        
+        
+        
         "src/drama/drama.js",
+        "src/drama/map.js",
         "src/drama/fun.js",
         
         

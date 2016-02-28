@@ -83,8 +83,12 @@ var HelloWorldScene = cc.Scene.extend({
         dark.e_save.get_achievement().load();
         
         //var scene = new MainScene();
+        
+        //成就測試
         //var scene = new AchievementScene();
         
+        /*
+        //劇本測試
         var record = dark.e_save.get_record();
         //設置 記錄名
         record.name("dark");
@@ -95,6 +99,21 @@ var HelloWorldScene = cc.Scene.extend({
 
         //執行 劇本
         var scene = new DramaScene();
+        /**/
+        
+        /**/
+        //地圖測試
+        var record = dark.e_save.get_record();
+        //設置 記錄名
+        record.name("dark");
+        //設置 難度
+        record.difficulty(0);
+        //設置關卡 劇本
+        record.set_map(DARK_DRAMA_NAME_START);
+        
+        //加載地圖
+        var scene = new MapScene([1,2,3]);
+        /**/
         
         cc.director.runScene(scene);
     }

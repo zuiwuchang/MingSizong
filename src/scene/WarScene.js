@@ -5,8 +5,11 @@ var WARSCENE_STATUS_TALK = 1;	//執行 角色 談話
 
 var WarUiLyer = cc.Layer.extend({
 	_get_status:null,
-	ctor:function (get_status) {
+	_info:null,
+	ctor:function (info,get_status) {
+		this._info = info;
 		this._get_status = get_status;
+		
 		this._super();
 		
 		var size = cc.winSize;
@@ -78,13 +81,18 @@ var WarUiLyer = cc.Layer.extend({
 		});
 		node.addClickEventListener(this._e_click_system.bind(this));
 		this.addChild(node);
+		
+		//debug
+		//this._e_click_go();
 	},
 	//event
 	_e_click_go:function(){
 		if(this._get_status() != WARSCENE_STATUS_WAIT){
 			return;
 		}
-		cc.log(_("WarScene_Go"));
+		
+		var scene = new RoleScene(this._info);
+		cc.director.pushScene(scene);
 	},
 	_e_click_equip:function(){
 		if(this._get_status() != WARSCENE_STATUS_WAIT){
@@ -274,7 +282,7 @@ var WarLayer = cc.Layer.extend({
 		
 		
 		//ui
-		node = new WarUiLyer(this.status.bind(this));
+		node = new WarUiLyer(info,this.status.bind(this));
 		this.addChild(node);
 		this._ui = node;
 		
@@ -570,7 +578,7 @@ var WarScene = cc.Scene.extend({
 	},
 	onEnter:function () {
 		this._super();
-
+		
 		var layer = new WarLayer(this._info);
 		this.addChild(layer);
 	}

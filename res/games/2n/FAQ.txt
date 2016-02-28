@@ -1,0 +1,2 @@
+move	14
+defence	7

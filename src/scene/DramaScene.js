@@ -513,6 +513,9 @@ var DramaLayer = cc.Layer.extend({
 		return false;
 	},
 	_drama_war:function(info){
+		var record = dark.e_save.get_record();
+		record.set_war();
+		
 		var scene  = new WarScene(info.value);
 		cc.director.runScene(scene);
 	},
