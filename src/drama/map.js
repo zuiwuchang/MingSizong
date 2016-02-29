@@ -2,5 +2,5 @@
 dark.map = {};
 
 dark.map[DARK_DRAMA_NAME_MASTER] = {
-		"map":"123"
+		"map":"res/map/0/m.tmx"
 };
