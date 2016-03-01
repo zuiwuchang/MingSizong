@@ -104,7 +104,7 @@
   </tile>
   <tile id="20">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="21">
@@ -204,12 +204,12 @@
   </tile>
   <tile id="40">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="41">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="42">
@@ -304,17 +304,17 @@
   </tile>
   <tile id="60">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="61">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="62">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="63">
@@ -394,32 +394,32 @@
   </tile>
   <tile id="78">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="79">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="80">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="81">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="82">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="83">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="84">
@@ -489,42 +489,42 @@
   </tile>
   <tile id="97">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="98">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="99">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="100">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="101">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="102">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="103">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="104">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="105">
@@ -589,42 +589,42 @@
   </tile>
   <tile id="117">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="118">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="119">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="120">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="121">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="122">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="123">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="124">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="125">
@@ -689,42 +689,42 @@
   </tile>
   <tile id="137">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="138">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="139">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="140">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="141">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="142">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="143">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="144">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="145">
@@ -784,47 +784,47 @@
   </tile>
   <tile id="156">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="157">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="158">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="159">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="160">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="161">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="162">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="163">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="164">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="165">
@@ -884,42 +884,42 @@
   </tile>
   <tile id="176">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="177">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="178">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="179">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="180">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="181">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="182">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="183">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="184">
@@ -984,37 +984,37 @@
   </tile>
   <tile id="196">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="197">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="198">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="199">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="200">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="201">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="202">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="203">
@@ -1079,37 +1079,37 @@
   </tile>
   <tile id="215">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="216">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="217">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="218">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="219">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="220">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="221">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="222">
@@ -1179,32 +1179,32 @@
   </tile>
   <tile id="235">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="236">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="237">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="238">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="239">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="240">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="241">
@@ -1279,27 +1279,27 @@
   </tile>
   <tile id="255">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="256">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="257">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="258">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="259">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="260">
@@ -1384,22 +1384,22 @@
   </tile>
   <tile id="276">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="277">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="278">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="279">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="280">
@@ -1494,12 +1494,12 @@
   </tile>
   <tile id="298">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="299">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="300">
@@ -1599,7 +1599,7 @@
   </tile>
   <tile id="319">
    <properties>
-    <property name="type" value="0"/>
+    <property name="type" value="200"/>
    </properties>
   </tile>
   <tile id="320">
@@ -2003,7 +2003,7 @@
    </properties>
   </tile>
  </tileset>
- <layer name="base" width="20" height="20" offsetx="-1" offsety="1">
+ <layer name="base" width="20" height="20" offsetx="80" offsety="-40">
   <data encoding="base64" compression="zlib">
    eJwNwwOUEAYAANDLti5c9uUuX7Ztuy67u2wbW27L3DK22rJtY4tb3OJQ/73/IwUEBEQ2ilGNZnRjGNNYxjaOcY1nfBOY0EQmNolJTWZyUxhoSlOZ2jQGmdZ0pjeDGc1kZrOY1WxmN4c5DTaXuc1jXvOZ3wIWNMRCFraIRS1mcUsYaklLWdoylrWc5a1gRStZ2SpWtZrVrWFNa1nbOta1nvVtYEMb2dgmNrWZzW1hS1vZ2ja2tZ3t7WBHO9nZLnY1zG52t4c97WVv+9jXfvZ3gAMd5GDDjXCIQx3mcEc40lGOdoxjHed4JzjRSU52ilOd5nRnONNZznaOc53nfL/xWxe40EUudolLXeZyv/N7V7jSVa52jWtd53o3uNFNbvYHf3SLW93mdne4013udo97/cmf3ed+f/FXD3jQQx72iEc95nFPeNJTnvaMZz3neS940Ute9opXveZ1b3jTW972jne9530f+NDf/N1HPvaJT33mc//wT1/40le+9o1v/cu/fed7P/jRT372H//1P//3iwGRMLJRjGo0oxvDmMYytnGMazzjm8CEJjKxSUxqMpObwkBTmsrUpjHItKYzvRnMaCYzm8WsZjO7OcxpsLnMbR7zms/8FrCgIRaysEUsajGLW8JQS1rK0paxrOUsbwUrWsnKVrGq1axuDWtay9rWsa71rG8DG9rIxjaxqc1sbgtb2srWtrGt7WxvBzvayc52sathdrO7PexpL3vbx772s78DHOggBxtuhEMc6jCHO8KRjnK0YxzrOMc7wYlOcrJTnOo0pzvDmX4FUpio2g==
   </data>

@@ -38,6 +38,25 @@ dark.i18n.zh_tw = {
 		"TAG_ROLE_ARMS_TYPE_HORSE_ARCHER":"騎射手",
 		
 		
+		
+		"TAG_MAP_TILE_TYPE_PLAIN":"平原",
+		"TAG_MAP_TILE_TYPE_PRAIRIE":"草原",
+		"TAG_MAP_TILE_TYPE_HOUSES":"民居",
+		
+		"TAG_MAP_TILE_TYPE_BARRACK":"兵營",
+		"TAG_MAP_TILE_TYPE_CASTLE":"城堡",
+		
+		"TAG_MAP_TILE_TYPE_FENCES":"柵欄",
+		"TAG_MAP_TILE_TYPE_WALL":"城牆",
+		
+		"TAG_MAP_TILE_TYPE_SWAMP":"沼澤",
+		
+		
+		
+		"TAG_MAP_TILE_INFO_HP":"可以恢復",
+		"TAG_MAP_TILE_NO_MOVE":"不可移動",
+		
+		
 		"ROLE_NAME_YAN13":"燕十三",
 		"ROLE_NAME_CAOBIN":"曹冰",
 		
