@@ -51,6 +51,13 @@ var ROLE_ARMS_TYPE_HERO			=	0;	//英雄
 var ROLE_ARMS_TYPE_CAVALRY		=	1;	//騎兵
 var ROLE_ARMS_TYPE_HORSE_ARCHER	=	2;	//騎射
 
+var ROLE_ARMS_TYPE_TAOIST		=	100;	//道士
+var ROLE_ARMS_TYPE_WARLOCK		=	101;	//術士
+var ROLE_ARMS_TYPE_COUNSELOR	=	102;	//謀士
+
+var ROLE_ARMS_TYPE_INFANTRY		=	200;	//步兵
+var ROLE_ARMS_TYPE_ARCHER		=	201;	//弓箭手
+var ROLE_ARMS_TYPE_BANDIT		=	202;	//山賊
 
 
 //角色 基類
@@ -98,7 +105,15 @@ var role_base = cc.Sprite.extend({
 	//當前 經驗
 	_exp:0,
 	
+	
+	//當前 hp mp
+	_cur_hp:0,
+	_cur_mp:0,
+	
 
+	//臉 朝方向
+	_face_to:ROLE_FACE_BOTTOM,
+	
 	_opacity:null,
 	ctor:function (id,sid,lv) {
 		this._id = id;
@@ -152,6 +167,11 @@ var role_base = cc.Sprite.extend({
 			}
 		});
 		cc.eventManager.addListener(listener, this);
+	},
+	//初始化 角色 初始狀態
+	init_cur:function(){
+		this._cur_hp = this.get_hp();
+		this._cur_mp = this.get_mp();
 	},
 	//觸摸 回調
 	e_touch:function(call_back){
@@ -294,6 +314,29 @@ var role_base = cc.Sprite.extend({
 		case ROLE_ARMS_TYPE_HORSE_ARCHER:
 			str = _("TAG_ROLE_ARMS_TYPE_HORSE_ARCHER");
 			break;
+			
+			
+			
+		case ROLE_ARMS_TYPE_TAOIST:
+			str = _("TAG_ROLE_ARMS_TYPE_TAOIST");
+			break;
+		case ROLE_ARMS_TYPE_WARLOCK:
+			str = _("TAG_ROLE_ARMS_TYPE_WARLOCK");
+			break;
+		case ROLE_ARMS_TYPE_COUNSELOR:
+			str = _("TAG_ROLE_ARMS_TYPE_COUNSELOR");
+			break;
+			
+			
+		case ROLE_ARMS_TYPE_INFANTRY:
+			str = _("TAG_ROLE_ARMS_TYPE_INFANTRY");
+			break;
+		case ROLE_ARMS_TYPE_ARCHER:
+			str = _("TAG_ROLE_ARMS_TYPE_ARCHER");
+			break;
+		case ROLE_ARMS_TYPE_BANDIT:
+			str = _("TAG_ROLE_ARMS_TYPE_BANDIT");
+			break;
 		}
 		return str;
 	},
@@ -431,4 +474,141 @@ var role_base = cc.Sprite.extend({
 		
 		this._move = n;
 	},
+	
+	
+	//執行動作
+	face_to:function(n){
+		var animation = new cc.Animation();
+		
+		var rect = this.getTextureRect();
+		var texture = this.getTexture();
+		var x = rect.x;
+		var y = rect.y;
+		if(n == ROLE_FACE_BOTTOM || n == undefined){
+			animation.addSpriteFrameWithTexture(texture, rect);
+			animation.addSpriteFrameWithTexture(texture, cc.rect(x + rect.width, y, rect.width, rect.height));
+		
+			this._face_to = ROLE_FACE_BOTTOM;
+		}else if(n == ROLE_FACE_LEFT){
+			animation.addSpriteFrameWithTexture(texture, cc.rect(x + rect.width * 4, y, rect.width, rect.height));
+			animation.addSpriteFrameWithTexture(texture, cc.rect(x + rect.width * 5, y, rect.width, rect.height));
+			
+			this._face_to = ROLE_FACE_LEFT;
+		}else if(n == ROLE_FACE_TOP){
+			animation.addSpriteFrameWithTexture(texture, cc.rect(x + rect.width * 2, y, rect.width, rect.height));
+			animation.addSpriteFrameWithTexture(texture, cc.rect(x + rect.width * 3, y, rect.width, rect.height));
+		
+			this._face_to = ROLE_FACE_TOP;
+		}else if(n == ROLE_FACE_RIGHT){
+			animation.addSpriteFrameWithTexture(texture, cc.rect(x + rect.width * 6, y, rect.width, rect.height));
+			animation.addSpriteFrameWithTexture(texture, cc.rect(x + rect.width * 7, y, rect.width, rect.height));
+		
+			this._face_to = ROLE_FACE_RIGHT;
+		}
+		
+		animation.setDelayPerUnit(ROLE_FACE_ANIMATION);
+		var action = cc.animate(animation);
+		this.stopAllActions();
+		this.runAction(action.repeatForever());
+	},
+	get_face_to:function(){
+		return this._face_to;
+	},
+	cur_hp:function(n){
+		if(n == undefined){
+			return this._cur_hp;
+		}
+
+		this._cur_hp = n;
+	},
+	cur_mp:function(n){
+		if(n == undefined){
+			return this._cur_mp;
+		}
+
+		this._cur_mp = n;
+	},
 });
+
+
+//角色輔助 函數
+var util_role = {};
+
+//返回指定兵種 在指定地形的 作戰效率
+util_role.utility = function(arms,t){
+	if(t == MAP_TILE_TYPE_BARRACK){
+		return 10;
+	}else if(t == MAP_TILE_TYPE_CASTLE){
+		return 20;
+	}
+	
+	
+	if(arms == ROLE_ARMS_TYPE_HERO ||  //英雄
+			arms == ROLE_ARMS_TYPE_CAVALRY || //騎兵
+			arms == ROLE_ARMS_TYPE_HORSE_ARCHER	//騎射
+	){
+		if(t == MAP_TILE_TYPE_PLAIN || 
+				t == MAP_TILE_TYPE_PRAIRIE){
+			return 10;
+		}else if(t == MAP_TILE_TYPE_HOUSES){
+			return 0;
+		}
+		
+		else if(t == MAP_TILE_TYPE_SWAMP){
+			return -20;
+		}
+		
+	}
+	
+	else if(arms == ROLE_ARMS_TYPE_TAOIST ||	//道士
+			arms == ROLE_ARMS_TYPE_WARLOCK ||	//術士
+			arms == ROLE_ARMS_TYPE_COUNSELOR	//謀士
+	){
+		if(t == MAP_TILE_TYPE_PLAIN || 
+				t == MAP_TILE_TYPE_PRAIRIE){
+			return 0;
+		}else if(t == MAP_TILE_TYPE_HOUSES){
+			return 0;
+		}
+
+		else if(t == MAP_TILE_TYPE_SWAMP){
+			return 0;
+		}
+	}
+	
+	else if(arms == ROLE_ARMS_TYPE_INFANTRY	){	//步兵
+		if(t == MAP_TILE_TYPE_PLAIN || 
+				t == MAP_TILE_TYPE_PRAIRIE){
+			return 0;
+		}else if(t == MAP_TILE_TYPE_HOUSES){
+			return 0;
+		}
+
+		else if(t == MAP_TILE_TYPE_SWAMP){
+			return -10;
+		}
+	}else if(arms == ROLE_ARMS_TYPE_ARCHER){	//弓箭手
+		if(t == MAP_TILE_TYPE_PLAIN || 
+				t == MAP_TILE_TYPE_PRAIRIE){
+			return 0;
+		}else if(t == MAP_TILE_TYPE_HOUSES){
+			return 0;
+		}
+
+		else if(t == MAP_TILE_TYPE_SWAMP){
+			return -10;
+		}
+	}else if(arms == ROLE_ARMS_TYPE_BANDIT){	//山賊
+		if(t == MAP_TILE_TYPE_PLAIN || 
+				t == MAP_TILE_TYPE_PRAIRIE){
+			return 0;
+		}else if(t == MAP_TILE_TYPE_HOUSES){
+			return 0;
+		}
+
+		else if(t == MAP_TILE_TYPE_SWAMP){
+			return -10;
+		}
+	}
+	return 0;
+};

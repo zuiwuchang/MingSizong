@@ -26,6 +26,7 @@
         
         
         "src/singleton/define.js",
+        "src/singleton/map.js",
         
         "src/ui/UiTalkSprite.js",
         
@@ -41,6 +42,15 @@
         "src/role/hero.js",
         "src/role/cavalry.js",
         "src/role/horse_archer.js",
+        
+        "src/role/bandit.js",
+        
+        "src/role/warlock.js",
+        "src/role/taoist.js",
+        "src/role/counselor.js",
+        
+        "src/role/infantry.js",
+        "src/role/archer.js",
         "src/role/factory.js",
         
         

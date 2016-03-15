@@ -17,6 +17,12 @@ dark.i18n.zh_tw = {
 		
 		
 		
+		"TAG_FACTION_MY":"大明",
+		"TAG_FACTION_FRIEND":"友軍",
+		"TAG_FACTION_ENEMY":"敵軍",
+		
+		
+		
 		"TAG_ROLE_ATTACK_TYPE_NORMAL":"普通",
 		"TAG_ROLE_ATTACK_TYPE_PUNCTURE":"穿刺",
 		"TAG_ROLE_ATTACK_TYPE_WEIGHT":"重型",
@@ -36,6 +42,14 @@ dark.i18n.zh_tw = {
 		"TAG_ROLE_ARMS_TYPE_HERO":"英雄",
 		"TAG_ROLE_ARMS_TYPE_CAVALRY":"騎兵",
 		"TAG_ROLE_ARMS_TYPE_HORSE_ARCHER":"騎射手",
+		
+		"TAG_ROLE_ARMS_TYPE_TAOIST":"道士",
+		"TAG_ROLE_ARMS_TYPE_WARLOCK":"術士",
+		"TAG_ROLE_ARMS_TYPE_COUNSELOR":"謀士",
+		
+		"TAG_ROLE_ARMS_TYPE_INFANTRY":"步兵",
+		"TAG_ROLE_ARMS_TYPE_ARCHER":"弓箭手",
+		"TAG_ROLE_ARMS_TYPE_BANDIT":"山賊",
 		
 		
 		
@@ -57,8 +71,17 @@ dark.i18n.zh_tw = {
 		"TAG_MAP_TILE_NO_MOVE":"不可移動",
 		
 		
+		"ROLE_NAME_INFANTRY":"步兵",
+		"ROLE_NAME_ARCHER":"弓箭手",
+		
+		"ROLE_NAME_COUNSELOR":"謀士",
+		
 		"ROLE_NAME_YAN13":"燕十三",
 		"ROLE_NAME_CAOBIN":"曹冰",
+		"ROLE_NAME_XIE3":"謝曉峰",
+		
+		"ROLE_NAME_9000":"魏忠賢",
+		"ROLE_NAME_LICAOQING":"李朝钦",
 		
 		
 		

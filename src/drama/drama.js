@@ -202,7 +202,7 @@ dark.drama[DARK_DRAMA_NAME_MASTER] = [
 			"outmin":2,
 			"outmax":3,
 			//必須出陣 角色
-			"outmust":[ROLE_ID_MAIN],
+			"outmust":[ROLE_ID_MAIN,ROLE_NAME_YAN13],
 			
 			//出場角色
 			"roles":[
