@@ -9,11 +9,13 @@ var archer = role_base.extend({
 
 		this.type_arms(ROLE_ARMS_TYPE_ARCHER);
 		
+		this.move(4);
+		
 		this.init_cur();
 	}
 });
 
-var archer_normal = infantry.extend({
+var archer_normal = archer.extend({
 	ctor:function (id,sid,lv) {
 		this._super(id,sid,lv);
 
@@ -39,7 +41,7 @@ var archer_normal = infantry.extend({
 
 
 
-		this.move(4);
+		
 		
 		this.init_cur();
 	}

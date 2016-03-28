@@ -852,7 +852,7 @@ var MapStatus = {
 		if(s == undefined){
 			return this._statue;
 		}
-		
+
 		this._statue = s;
 	},
 	is_statue:function(s){
@@ -1262,6 +1262,38 @@ var MapTalkBox = cc.Sprite.extend({
 	},
 });
 
+//可移動範圍
+var RangeLayer = cc.Layer.extend({
+	ctor:function () {
+		this._super();
+		
+		
+	},
+	hide:function(){
+		this.removeAllChildren();
+	},
+	show:function(obj,faction){
+		var str;
+		if(faction == 0){
+			str = "res/scene/map/0.png";
+		}else{
+			str = "res/scene/map/1.png";
+		}
+		for (key in obj)
+		{
+			var pos = obj[key];
+			var node = new cc.Sprite(str);
+			node.attr({
+				x:pos.x * 48,
+				y:pos.y * 48,
+				anchorX:0,
+				anchorY:0,
+				opacity :150
+			});
+			this.addChild(node);
+		}
+	},
+});
 var MapTMX = cc.TMXTiledMap.extend({
 	_ids:null,
 	//地圖配置
@@ -1275,6 +1307,9 @@ var MapTMX = cc.TMXTiledMap.extend({
 	_my:null,
 	//敵軍
 	_enemy:null,
+	
+	//可移動範圍
+	_range:null,
 
 	//選擇框
 	_select:null,
@@ -1403,6 +1438,10 @@ var MapTMX = cc.TMXTiledMap.extend({
 		this._init_drama();
 	},
 	_init:function(){
+		//初始化 移動範圍
+		this._init_range();
+		
+		
 		//初始化 出戰角色
 		var node = new MapLayerMy(this._ids,this.mapWidth - 1, this.mapHeight - 1,this.tileWidth,this.tileHeight);
 		node.e_touch(this._e_touch_my.bind(this));
@@ -1443,11 +1482,17 @@ var MapTMX = cc.TMXTiledMap.extend({
 		this._enemy = node;
 		
 		
+		
 		//初始化選擇框
 		this._init_select();
 		
 		//初始化 信息框
 		this._init_box();
+	},
+	_init_range:function(){
+		var node = new RangeLayer();
+		this.addChild(node);
+		this._range = node;
 	},
 	_init_select:function(){
 		//增加選擇框
@@ -1545,6 +1590,8 @@ var MapTMX = cc.TMXTiledMap.extend({
 	_hide_box:function(){
 		this._role_box.setVisible(false);
 		this._tile.setVisible(false);
+		
+		this._range.hide();
 	},
 	//顯示角色 信息
 	_show_role_info:function(x,y,faction){
@@ -1624,6 +1671,7 @@ var MapTMX = cc.TMXTiledMap.extend({
 			this._show_role_info(x, y, 0);
 		}else if(n == 2){
 			//移動 攻擊
+			this._show_range(0,x,y,sprite);
 		}else if(n == 3){
 			//角色命令菜單
 
@@ -1645,7 +1693,7 @@ var MapTMX = cc.TMXTiledMap.extend({
 			this._show_role_info(x, y, 1);
 		}else if(n == 2){
 			//查看 移動範圍 攻擊範圍
-
+			this._show_range(1,x,y,sprite);
 
 			//重置n
 			this._select.reset_n();
@@ -1665,13 +1713,169 @@ var MapTMX = cc.TMXTiledMap.extend({
 			this._show_role_info(x, y, 2);
 		}else if(n == 2){
 			//查看 移動範圍 攻擊範圍
-
+			this._show_range(2,x,y,sprite);
 
 			//重置n
 			this._select.reset_n();
 		}
 		return true;
 	},
+	//顯示 移動範圍
+	_show_range:function(faction,x,y,sprite){
+		var obj = {};
+		var cur = {
+				x:x,
+				y:y,
+				n:sprite.move(),
+				parent:null
+		};
+		var cache = {};
+		this._get_range(obj,cache,faction,cur,sprite.type_arms())
+		this._range.show(obj,faction);
+	},
+	_get_range:function(obj,cache,faction,pos,arms){
+		if(pos.n <= 0){
+			return;
+		}
+		var x = pos.x;
+		var y = pos.y;
+		var n = pos.n;
+		
+		var top = {
+				x:x,
+				y:y + 1,
+				parent:pos
+		};
+		if(top.y < this.mapHeight){
+			if(this._pos_can_move(cache,faction,top.x,top.y)){
+				var t = this.get_pos_type(top.x, top.y);
+				if(dark.s_map_fun.is_move(t)){
+					if(this._has_enemy(cache,faction, top.x+1, top.y)){
+						top.n = 0;
+					}else if(this._has_enemy(cache,faction, top.x-1, top.y)){
+						top.n = 0;
+					}else{
+						top.n = n - util_role.move(arms,t);
+					}
+					
+					if(this._add_range(obj,top)){	
+						this._get_range(obj,cache, faction, top, arms);
+					}
+				}
+			}
+		}
+		
+		var bottom = {
+				x:x,
+				y:y - 1,
+				parent:pos
+		};
+		if(bottom.y >= 0){
+			if(this._pos_can_move(cache,faction,bottom.x,bottom.y)){
+				
+				var t = this.get_pos_type(bottom.x, bottom.y);
+				if(dark.s_map_fun.is_move(t)){
+					if(this._has_enemy(cache,faction, bottom.x+1, bottom.y)){
+						bottom.n = 0;
+					}else if(this._has_enemy(cache,faction, bottom.x-1, bottom.y)){
+						bottom.n = 0;
+					}else{
+						bottom.n = n - util_role.move(arms,t);
+					}
+					if(this._add_range(obj,bottom)){
+						this._get_range(obj,cache, faction, bottom, arms);
+					}
+				}
+			}
+		}
+	
+		var left = {
+				x:x - 1,
+				y:y,
+				parent:pos
+		};
+		if(left.x >= 0){
+			if(this._pos_can_move(cache,faction,left.x,left.y)){
+				var t = this.get_pos_type(left.x, left.y);
+				if(dark.s_map_fun.is_move(t)){
+					if(this._has_enemy(cache,faction, left.x, left.y + 1)){
+						left.n = 0;
+					}else if(this._has_enemy(cache,faction, left.x, left.y - 1)){
+						left.n = 0;
+					}else{
+						left.n = n - util_role.move(arms,t);
+					}
+					if(this._add_range(obj,left)){	
+						this._get_range(obj,cache, faction, left, arms);
+					}
+				}
+			}
+		}		
+		var right = {
+				x:x + 1,
+				y:y,
+				parent:pos
+		};
+		if(right.x < this.mapWidth){
+			if(this._pos_can_move(cache,faction,right.x,right.y)){
+				var t = this.get_pos_type(right.x, right.y);
+				if(dark.s_map_fun.is_move(t)){
+					if(this._has_enemy(cache,faction, right.x, right.y + 1)){
+						right.n = 0;
+					}else if(this._has_enemy(cache,faction, right.x, right.y - 1)){
+						right.n = 0;
+					}else{
+						right.n = n - util_role.move(arms,t);
+					}
+					if(this._add_range(obj,right)){
+						this._get_range(obj, cache,faction, right, arms);
+					}
+				}
+			}
+		}
+	},
+	_pos_can_move:function(cache,faction,x,y){
+		if(this._has_enemy(cache,faction, x, y)){
+			return false;
+		}
+		
+		return true;
+	},
+	_has_enemy:function(cache,faction,x,y){
+		var str = x + "-" + y;
+		var has = cache[str];
+		if(has !=undefined){
+			return has;
+		}
+		
+		if(faction == 2){
+			if(this.get_role_by_pos(x, y, 0) != null ||
+					this.get_role_by_pos(x, y, 1) != null){
+				cache[str] = true;
+				return true;
+			}
+		}else{
+			if(this.get_role_by_pos(x, y, 2) != null){
+				cache[str] = true;
+				return true;
+			}
+		}
+		cache[str] = false;
+		return false;
+	},
+	_add_range:function(obj,pos){
+		var str = pos.x + "-" + pos.y;
+		var old = obj[str];
+		if(old == undefined){
+			obj[str] = pos;
+			return true;
+		}else if(old.n <= pos.n){
+			obj[str] = pos;
+			return true;
+		}
+		return false;
+	},
+	
 	//選擇系統菜單
 	_show_cmd_sys:function(x,y,n){
 		cc.log("sys " + n);

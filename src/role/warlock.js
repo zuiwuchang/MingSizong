@@ -8,6 +8,8 @@ var warlock = role_base.extend({
 
 		this.type_arms(ROLE_ARMS_TYPE_WARLOCK);
 		
+		this.move(3);
+		
 		this.init_cur();
 	}
 });
@@ -38,7 +40,7 @@ var warlock_licaoqing = warlock.extend({
 
 
 
-		this.move(3);
+		
 		
 		this.init_cur();
 	}

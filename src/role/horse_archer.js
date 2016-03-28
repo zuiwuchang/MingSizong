@@ -10,6 +10,8 @@ var horse_archer = role_base.extend({
 		
 		this.type_arms(ROLE_ARMS_TYPE_HORSE_ARCHER);
 		
+		this.move(6);
+		
 		this.init_cur();
 	}
 });
@@ -40,7 +42,7 @@ var horse_archer_caobin = horse_archer.extend({
 		
 		
 		
-		this.move(6);
+		
 		
 		this.init_cur();
 	}

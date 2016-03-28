@@ -10,6 +10,8 @@ var cavalry = role_base.extend({
 		this.type_arms(ROLE_ARMS_TYPE_CAVALRY);
 		
 		
+		this.move(6);
+		
 		this.init_cur();
 	}
 });
@@ -39,8 +41,6 @@ var cavalry_yan13 = cavalry.extend({
 		this.lv_intellect(1.6);
 		
 		
-		
-		this.move(6);
 		
 		this.init_cur();
 	}

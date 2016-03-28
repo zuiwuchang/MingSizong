@@ -8,6 +8,8 @@ var infantry = role_base.extend({
 
 		this.type_arms(ROLE_ARMS_TYPE_INFANTRY);
 		
+		this.move(4);
+		
 		this.init_cur();
 	}
 });
@@ -38,7 +40,7 @@ var infantry_normal = infantry.extend({
 
 
 
-		this.move(4);
+		
 		
 		this.init_cur();
 	}

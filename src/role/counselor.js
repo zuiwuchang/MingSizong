@@ -7,13 +7,15 @@ var counselor = role_base.extend({
 		this.type_attack(ROLE_ATTACK_TYPE_NORMAL);
 		this.type_armor(ROLE_ARMOR_TYPE_NORMAL);
 
-		this.type_arms(ROLE_ARMS_TYPE_TAOIST);
+		this.type_arms(ROLE_ARMS_TYPE_COUNSELOR);
+		
+		this.move(3);
 		
 		this.init_cur();
 	}
 });
 
-var counselor_normal = taoist.extend({
+var counselor_normal = counselor.extend({
 	ctor:function (id,sid,lv) {
 		this._super(id,sid,lv);
 
@@ -39,7 +41,7 @@ var counselor_normal = taoist.extend({
 
 
 
-		this.move(3);
+		
 		
 		this.init_cur();
 	}

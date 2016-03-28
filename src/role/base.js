@@ -612,3 +612,40 @@ util_role.utility = function(arms,t){
 	}
 	return 0;
 };
+
+//返回指定兵種 在指定地形 消耗機動力
+util_role.move = function(arms,t){
+	
+	if(t == MAP_TILE_TYPE_BARRACK || 
+			t == MAP_TILE_TYPE_CASTLE ||
+			
+			t == MAP_TILE_TYPE_PLAIN ||
+			t == MAP_TILE_TYPE_PRAIRIE ||
+			t == MAP_TILE_TYPE_HOUSES
+			){
+		return 1;
+	}
+
+
+	//沼澤
+	if(t == MAP_TILE_TYPE_SWAMP){
+		//各種步兵
+		if(arms == ROLE_ARMS_TYPE_TAOIST ||
+				arms == ROLE_ARMS_TYPE_WARLOCK ||
+				arms == ROLE_ARMS_TYPE_COUNSELOR ||
+				
+				arms == ROLE_ARMS_TYPE_INFANTRY ||
+				arms == ROLE_ARMS_TYPE_ARCHER ||
+				arms == ROLE_ARMS_TYPE_BANDIT ){
+			return 2;
+		}
+		//各種 騎兵
+		if(arms == ROLE_ARMS_TYPE_HERO ||
+				arms == ROLE_ARMS_TYPE_CAVALRY ||
+				arms == ROLE_ARMS_TYPE_HORSE_ARCHER ){
+			return 3;
+		}
+	}
+	return 1;
+};
+

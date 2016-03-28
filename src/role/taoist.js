@@ -8,6 +8,8 @@ var taoist = role_base.extend({
 
 		this.type_arms(ROLE_ARMS_TYPE_TAOIST);
 		
+		this.move(3);
+		
 		this.init_cur();
 	}
 });
@@ -38,7 +40,7 @@ var taoist_9000 = taoist.extend({
 
 
 
-		this.move(3);
+		
 		
 		this.init_cur();
 	}

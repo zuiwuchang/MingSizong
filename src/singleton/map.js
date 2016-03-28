@@ -42,3 +42,12 @@ dark.s_map_fun.get_type_name=function(t){
 	}
 	return "unknow";
 };
+
+//返回地形 是否可 移動
+dark.s_map_fun.is_move = function(t){
+	if(t == MAP_TILE_TYPE_FENCES ||
+			t == MAP_TILE_TYPE_WALL){
+		return false;
+	}
+	return true;
+};

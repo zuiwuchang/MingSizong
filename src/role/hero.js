@@ -9,6 +9,8 @@ var hero = role_base.extend({
 		
 		this.type_arms(ROLE_ARMS_TYPE_HERO);
 		
+		this.move(6);
+		
 		this.init_cur();
 	}
 });
@@ -41,7 +43,7 @@ var hero_main = hero.extend({
 		
 		
 		
-		this.move(6);
+	
 		
 		this.init_cur();
 	}

@@ -10,6 +10,8 @@ var bandit = role_base.extend({
 
 		this.type_arms(ROLE_ARMS_TYPE_BANDIT);
 		
+		this.move(4);
+		
 		this.init_cur();
 	}
 });
@@ -40,7 +42,7 @@ var bandit_xie3 = bandit.extend({
 
 
 
-		this.move(4);
+		
 		
 		this.init_cur();
 	}
